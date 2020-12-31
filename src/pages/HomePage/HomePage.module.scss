@@ -32,7 +32,7 @@
                         animation: t2vue;
                         animation-duration: 3s;
                         animation-timing-function: ease-in;
-
+                        
                     }
                     .carousel__item__one__text{
                         font-size: 2rem;
@@ -58,6 +58,7 @@
                         animation-duration: 1s;
                         animation-timing-function: linear;
                         animation-fill-mode: forwards;
+                        opacity: 0;
                         a{
                             text-transform: uppercase;
                            font-size: 2rem;
@@ -218,16 +219,17 @@
         .hero{
             .carousel__item{          
                 .carousel__item__one{
+                    padding: 2em;
                     .carousel__item__one__content{
                         .carousel__item__one__t1{
                             font-size: 2.5rem ;
                         }
                         .carousel__item__one__t2{
-                            font-size: 3.5rem ;
+                            font-size: 3rem ;
                         }
                         .carousel__item__one__btn{
                             margin: 2em 0;
-                            padding: 2em 1.5em ;
+                            padding: 1.5em 1.5em ;
                         
                         }
                         
@@ -283,6 +285,7 @@
     }
     to{
         transform: translateY(0px);
+        opacity: 1;
     }
 }
 

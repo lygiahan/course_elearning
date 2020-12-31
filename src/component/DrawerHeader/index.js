@@ -1,9 +1,17 @@
 import { ShoppingFilled } from '@ant-design/icons';
-import { Badge, Button, Drawer, Typography } from 'antd'
-import React from 'react'
+import { Avatar, Badge, Button, Drawer, Menu, Popover, Typography } from 'antd'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import classes from './DrawerHeader.module.scss';
+
 export default function DrawerHeader(props) {
+  const popoverUser =(
+    <Menu >
+          <Menu.Item ><Link to="/user">Thông Tin</Link></Menu.Item>
+          <Menu.Item onClick={props.logOut}>Đăng xuất</Menu.Item>
+    </Menu>
+ )
+
     return (
         <Drawer
           title={
@@ -26,7 +34,23 @@ export default function DrawerHeader(props) {
                 </Link>
             </Badge>
             </li>
-            <li>
+
+            {props.userlogin ? 
+             <Popover placement="bottom" content={popoverUser} trigger={['hover','click']}>
+             <Avatar 
+                   style={{cursor:'pointer'}} 
+                   size={44}> 
+                   {<Link to='/user'>
+                      <Typography.Title 
+                         level={1} 
+                         style={{textTransform:'uppercase'}}>
+                         {props.crentialUser? props.crentialUser.taiKhoan.slice(0,1):''}
+                   </Typography.Title>
+                   </Link>}
+                </Avatar>
+             </Popover>
+            :<Fragment>
+              <li>
                <Button className={classes.drawer__btnregister}>
                    <Link to="/register">Đăng Ký</Link>
               </Button>
@@ -36,6 +60,8 @@ export default function DrawerHeader(props) {
                     <Link to="/login">Đăng Nhập</Link>
              </Button>
             </li>
+              </Fragment>}
+            
          </ul>
         </Drawer>
     )

@@ -16,7 +16,9 @@ export default function Course({course}) {
     return (
         <Col xs={12} sm={8} md={6}>     
          <Link to={`detail/${maKhoaHoc}`}>
-         <Card className={classes.course} bordered={false} hoverable cover={<img style={{height:180,borderTopLeftRadius:15,borderTopRightRadius:15,objectFit:'cover'}} src={hinhAnh}/>}>
+         <Card className={classes.course} 
+         bordered={false} hoverable 
+         cover={<img style={{height:180,borderTopLeftRadius:15,borderTopRightRadius:15,objectFit:'cover'}} src={hinhAnh}/>}>
              <Card.Meta className={classes.course__detail}  title={<h2 className={classes.course__title}>{tenKhoaHoc}</h2>} description={
                  (
                     <div className={classes.course__detail__body}>
@@ -33,7 +35,7 @@ export default function Course({course}) {
                                                 <li><StarFilled /></li>
                                                 <li><StarFilled /></li>
                                             </ul>
-                                            <div style={{padding:'0'}}>
+                                            <div style={{padding:'0'}} className={classes.detail__mobi}>
                                                 <span>
                                                      <Typography.Text delete >2.000.000đ</Typography.Text>
                                                 </span>
@@ -44,7 +46,8 @@ export default function Course({course}) {
                                        </div>
                                     <div className={classes.course__detail__btn}>
                                         <Link to="/">
-                                             <Button onClick={()=>addToCard(course)}  className={classes.course__detail__btnadd}>Thêm giỏ hàng</Button>
+                                             <Button onClick={()=>addToCard(course)} 
+                                              className={classes.course__detail__btnadd}>Thêm</Button>
                                         </Link>
                                     </div>
                                  </div>

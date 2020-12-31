@@ -121,7 +121,14 @@ export default function HeaderUI() {
                                 <UnorderedListOutlined onClick={showDrawer}/>                             
                            </Col>
  
-                           <DrawerHeader onChange={onchange} stateCart={stateCart} visible={visible} onClose={onClose}/>
+                           <DrawerHeader 
+                              onChange={onchange} 
+                              userlogin={userlogin}
+                              stateCart={stateCart} 
+                              visible={visible}
+                              logOut={logOut} 
+                              crentialadmin={crentialadmin}
+                              onClose={onClose}/>
  
  
                            <Col md={16} className={classes.nav__list__mobile}>

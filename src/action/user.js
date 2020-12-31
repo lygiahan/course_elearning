@@ -7,8 +7,7 @@ import { ToastCompo } from "../component/ToastCompo";
 export const registerAct =(user)=>{
     return async dispatch =>{
       try {
-        let res = await registerSer(user);
-        console.log(res);
+        await registerSer(user);
       } catch (error) {
           dispatch(ReduxThunk(USER_REGISTER_FAIL,error));
       }
@@ -94,7 +93,6 @@ export const ghiDanh =(data)=>{
         if(res.status === 200){
           ToastCompo('success',res.data);
         }
-        console.log(res);
         dispatch(ReduxThunk(USER_GHIDANH_SUCCESS,res.data));
       } catch (error) {
         ToastCompo('fail','Hệ thống lỗi, mong các bạn quay lại sau')

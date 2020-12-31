@@ -40,38 +40,38 @@ export default function FormInfo({infoUser}) {
     return (
         <form onSubmit={onSubmit} className={classes.form}>
         <Row className={classes.form__row}>
-            <Col md={24} style={{textAlign:'center'}} >
+            <Col xs={24} sm={24} md={24} style={{textAlign:'center'}} >
                  <Avatar size={100} >{info.hoTen}</Avatar>
             </Col>
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <label htmlFor="taiKhoan">Tài Khoản</label>
             </Col>
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <input disabled={true} type="text" name="taiKhoan"onChange={handleChange} value={info.taiKhoan}/>
             </Col>
 
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <label  htmlFor="matKhau">Mật Khẩu</label>
             </Col>
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <input disabled={disabled}  type="password" name="matKhau"onChange={handleChange} value={info.matKhau}/>
             </Col>
 
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <label htmlFor="hoTen">Họ Tên</label>
             </Col>
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <input disabled={disabled}  type="text" name="hoTen"onChange={handleChange} value={info.hoTen}/>
             </Col>
 
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <label htmlFor="Số Điện Thoại">Số Điện Thoại</label>
             </Col>
-            <Col md={24}>
+            <Col xs={24} sm={24} md={24}>
                   <input disabled={disabled}  type="text" name="soDT"onChange={handleChange} value={info.soDT}/>
             </Col>
 
-             <Col md={24}>
+             <Col xs={24} sm={24} md={24}>
              <select disabled={disabled}  value={info.maNhom} onChange={handleChange}>
                    <option value="GP01">GP01</option>
                    <option value="GP02">GP02</option>
@@ -85,7 +85,7 @@ export default function FormInfo({infoUser}) {
 
              </select>
              </Col>
-             <Col md={24} style={{textAlign:'center'}}>
+             <Col xs={24} sm={24} md={24} style={{textAlign:'center'}}>
                  {disabled  ?
                  <button type='submit' onClick={()=>setDisabled(!disabled)} className={classes.form__btnadd}>Sửa</button>
                  :

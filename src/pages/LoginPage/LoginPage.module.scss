@@ -4,13 +4,13 @@
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to right, #f3ea99, #dcfc99);
-    padding: 10rem 0;
+    padding: 15rem 20px;
     .form{
         margin-bottom: auto;
         background-color: #fff;
         width: 400px;
         height: 100%;
-        padding: 5rem;
+        padding: 3rem;
         box-shadow: 0 0 10px 3px hsla(0,0%,7%,.2);
       .text__mk{
           margin-top: 1.2em;
@@ -48,5 +48,10 @@
         }
        }
        
+    }
+}
+@media screen and(max-width:500px){
+    .login{
+        padding: 5em 2em;
     }
 }

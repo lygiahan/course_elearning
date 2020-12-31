@@ -15,11 +15,10 @@ export default function DetailCourse() {
        const state = useSelector(state => state.CourseReducer);
        let {loadingDetail,detail} = state;
          let {tenKhoaHoc,moTa,luotXem,ngayTao,soLuongHocVien} = detail;
-      const    stateCart = useSelector(state=>state.CartReducer);
+      const stateCart = useSelector(state=>state.CartReducer);
 
       const [loadingCart,SetLoadingCart]=useState(false);
-      console.log(stateCart);
-      console.log(loadingCart);
+   
        useEffect(()=>{
              dispatch(detailCourse(id));
        },[id])
@@ -97,7 +96,7 @@ export default function DetailCourse() {
                                        <Typography.Text mark strong style={{fontSize:'2.5rem'}}>Miễn phí</Typography.Text>
                                  </span>
                                 </div>
-                                <Button className={classes.body__right__btnadd} loading={false} onClick={()=>addToCart(detail)}>
+                                <Button shape="round" className={classes.body__right__btnadd} loading={false} onClick={()=>addToCart(detail)}>
                                     <Typography.Title level={4}>Thêm Giỏ Hàng</Typography.Title>
                                 </Button>
                                  <ul >

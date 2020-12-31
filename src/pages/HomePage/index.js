@@ -45,7 +45,7 @@ export default function HomePage() {
                                  <Button shape="round" className={classes.carousel__item__one__btn}><Link to="#">Xem Thêm</Link></Button>
                             </div>
                         </Col> 
-                        <Col xs={12} sm={12} md={8}>
+                        <Col xs={24} sm={12} md={8}>
                           <div className={classes.carousel__img}>
                               <img  src="./images/banner4.jpg"/>
 
@@ -76,7 +76,6 @@ export default function HomePage() {
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy1.png"/>}
                   title={<a className={classes.hero__bottom__list__link} href="#">Miễn phí khóa học</a>}
-                  description={<p>Free</p>}
                 />
               </List.Item>
               </Col>
@@ -86,7 +85,6 @@ export default function HomePage() {
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy2.png"/>}
                   title={<a href="#">Giảm Giá </a>}
-                  description="On orders over $80"
                 />
               </List.Item>
               </Col>
@@ -96,7 +94,6 @@ export default function HomePage() {
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy3.png"/>}
                   title={<a href="#">Truy cập trọn đời</a>}
-                  description="On orders over $80"
                 />
               </List.Item>
               </Col>
@@ -106,7 +103,6 @@ export default function HomePage() {
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy4.png"/>}
                   title={<a href="#">Hỗ trợ 24/24</a>}
-                  description="On orders over $80"
                 />
               </List.Item>
               </Col>

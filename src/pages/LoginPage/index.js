@@ -25,10 +25,10 @@ export default function LoginPage() {
            <div className={classes.form}>
     <form onSubmit={formik.handleSubmit}>
        <Row>
-          <Col md={24}>
+          <Col xs={24} sm={24} md={24}>
             <label  htmlFor="taiKhoan" ><Typography.Text>Tài Khoản</Typography.Text></label>
           </Col>
-          <Col md={24}>
+          <Col xs={24} sm={24} md={24}>
           <input 
             name="taiKhoan"
             type="text"
@@ -36,17 +36,17 @@ export default function LoginPage() {
             value={formik.values.taiKhoan}/>
           </Col>
 
-          <Col md={24} className={classes.text__mk}>
+          <Col xs={24} sm={24} md={24} className={classes.text__mk}>
             <label htmlFor="matKhau"><Typography.Text>Mật Khẩu</Typography.Text></label>
           </Col>
-          <Col md={24}>
+          <Col xs={24} sm={24} md={24}>
           <input 
             name="matKhau"
             type="password"
             onChange={formik.handleChange}
             value={formik.values.matKhau}/>
           </Col>
-          <Col md={24} className={classes.btnadd}>
+          <Col xs={24} sm={24} md={24} className={classes.btnadd}>
             <button type="submit" className={classes.form__btnadd}><Typography.Text>Đăng Nhập</Typography.Text></button>
           </Col>
        </Row>

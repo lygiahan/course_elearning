@@ -83,7 +83,7 @@ export default function CartPage() {
                      <Col xs={24} sm={24} md={6} className={classes.cart__content__row__order2}>
                         <Typography.Title type="success" level={1}>Tổng:</Typography.Title>
                          <Typography.Title level={2}>0 đ</Typography.Title>
-                         <Button onClick={()=>userAddCart()} loading={loadingGhiDanh} className={classes.btnThanhToan}>Thanh Toán</Button>
+                         <Button shape="round" onClick={()=>userAddCart()} loading={loadingGhiDanh} className={classes.btnThanhToan}>THANH TOÁN</Button>
                        
                      </Col>
                   </Row>

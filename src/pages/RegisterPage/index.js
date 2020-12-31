@@ -41,7 +41,6 @@ export default function RegisterPage() {
         })
         ,
         onSubmit:value=>{
-           console.log(value);
            dispatch(registerAct(value))
         }
       })
@@ -54,10 +53,10 @@ export default function RegisterPage() {
             <div className={classes.form}>
                <form onSubmit={formik.handleSubmit}>
                     <Row>
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                         <label htmlFor="taiKhoan">Tài Khoản</label>
                       </Col>
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                       <input 
                         name="taiKhoan"
                         type="text"
@@ -66,10 +65,10 @@ export default function RegisterPage() {
                         {formik.errors.taiKhoan ? <Typography.Text type="danger">{ formik.errors.taiKhoan}</Typography.Text> :null}
                       </Col>
 
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                         <label htmlFor="matKhau">Mật Khẩu</label>
                       </Col>
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                       <input 
                         name="matKhau"
                         type="password"
@@ -79,10 +78,10 @@ export default function RegisterPage() {
 
                       </Col>
 
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                         <label htmlFor="hoTen">Họ Tên</label>
                       </Col>
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                       <input 
                         name="hoTen"
                         type="text"
@@ -91,10 +90,10 @@ export default function RegisterPage() {
                         {formik.errors.hoTen ? <Typography.Text type="danger">{formik.errors.hoTen }</Typography.Text>:null}
                       </Col>
 
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                         <label htmlFor="soDT">Số Điện Thoại</label>
                       </Col>
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                       <input 
                         name="soDT"
                         type="text"
@@ -103,10 +102,10 @@ export default function RegisterPage() {
                         {formik.errors.soDT ? <Typography.Text type="danger">{formik.errors.soDT}</Typography.Text> :null}
                       </Col>
                   
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                         <label htmlFor="maNhom">Mã Nhóm</label>
                       </Col>
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                         <select value={formik.values.maNhom} name="maNhom" onChange={formik.handleChange}>
                           <option value="GP01">GP01</option>
                           <option value="GP02">GP02</option>
@@ -120,10 +119,10 @@ export default function RegisterPage() {
                         </select>
                         </Col>
 
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                         <label htmlFor="email">Email</label>
                       </Col>
-                      <Col md={24}>
+                      <Col xs={24} sm={24} md={24}>
                       <input 
                         name="email"
                         type="text"
@@ -132,7 +131,7 @@ export default function RegisterPage() {
                         {formik.errors.email ? <Typography.Text type="danger">{formik.errors.email}</Typography.Text> :null}
                       </Col>
 
-                        <Col md={24} className={classes.form__btn}>
+                        <Col xs={24} sm={24} md={24} className={classes.form__btn}>
                             <button type="submit" className={classes.form__btn__add}><Typography.Text>Đăng Ký</Typography.Text></button>
                         </Col>
                     </Row>

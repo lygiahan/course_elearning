@@ -35,7 +35,6 @@ export const filterCourse =(madanhmuc)=>{
     return async dispatch =>{
         try {
             let res = await filterCourseSer(madanhmuc);
-            console.log(res.data);
               dispatch(ReduxThunk(FILTER_COURSE_SUCCESS,res.data));
         } catch (error) {
               dispatch(ReduxThunk(FILTER_COURSE_FAIL,error))
@@ -46,7 +45,6 @@ export const filterCourse =(madanhmuc)=>{
 export const searchCourseAct=(search)=>{
     return async dispatch =>{
         let res= await searchCourse(search);
-        console.log(res);
     }
 }
 

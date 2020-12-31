@@ -101,3 +101,22 @@
         transform: translateY(0px) !important;
      }
 }
+
+@media screen and (max-width:400px){ 
+    .ant-card-body{
+        padding: 10px !important;
+    }
+    .course__detail__body{
+        .detail__mobi{
+            display: flex;
+            flex-direction: column !important;
+            span{
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+        .course__detail__btnadd{
+        }
+    }
+
+}
