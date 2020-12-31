@@ -1,0 +1,42 @@
+.form{
+    padding: 2em;
+    .form__row{
+        label{
+            font-size: 1.8rem;
+        }
+        input{
+            width: 100%;
+            padding: 0.7em 1.2em;
+            border: 1px solid #86ba09;
+            &:focus{
+                outline: none;
+           }
+        }
+         
+        select{
+            margin-top: 1em;
+            width: 100%;
+            padding: 0.8em 1.2em;
+            option{
+               margin: 1em 0;
+            }
+            &:focus{
+                outline: none;
+           }
+        }
+
+        .form__btnadd{
+            margin-top: 1.2em;
+            background-color: #86ba09;
+            padding: 0.3em 2em;
+            color: #fff;
+            font-size: 2rem;
+            border: none;
+            cursor: pointer;
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}

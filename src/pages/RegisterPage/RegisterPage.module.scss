@@ -1,0 +1,61 @@
+
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #f3ea99, #dcfc99);
+      padding: 5rem 0;
+    .form{
+        margin-bottom: auto;
+        background-color: #fff;
+        width: 400px;
+        height: 100%;
+        padding: 2rem;
+        box-shadow: 0 0 10px 3px hsla(0,0%,7%,.2);
+
+            
+      form{
+
+        
+        input{
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #86Ba09;
+
+            &:focus{
+                outline: none;
+            }
+        }
+        label{
+            font-size: 1.8rem;
+        }
+        textarea{
+
+        }
+        select{
+            width: 100%;
+            padding: 0.7em 0;
+        }
+
+       .form__btn{
+           text-align: center;
+           .form__btn__add{
+            background-color: #86Ba09;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            margin-top: 2em;
+            padding: 0.4em 1.5em;
+                &:focus{
+                    outline: none ;
+                }
+           span{
+               font-size: 2rem;
+               color: #fff;
+           }
+        }
+       }
+      }        
+      
+    }
+}

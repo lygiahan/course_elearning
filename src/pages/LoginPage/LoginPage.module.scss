@@ -1,0 +1,52 @@
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #f3ea99, #dcfc99);
+    padding: 10rem 0;
+    .form{
+        margin-bottom: auto;
+        background-color: #fff;
+        width: 400px;
+        height: 100%;
+        padding: 5rem;
+        box-shadow: 0 0 10px 3px hsla(0,0%,7%,.2);
+      .text__mk{
+          margin-top: 1.2em;
+      }
+        span{
+            font-size: 1.8rem;
+        }
+        input{
+            padding: 0.8rem;
+            width: 100%;
+            border: 1px solid #86ba09;
+
+            &:focus{
+              outline: none;
+
+            }
+        }
+       .btnadd{
+           text-align: center;
+        .form__btnadd{
+           
+            margin-top: 2em;
+            background-color: #86ba09;
+                       padding: 0.4em 1.5em;
+            border: none;
+            cursor: pointer;
+          &:focus{
+              outline: none;
+          }
+            span{
+                font-size: 2rem;
+                color: #fff;
+
+            }
+        }
+       }
+       
+    }
+}

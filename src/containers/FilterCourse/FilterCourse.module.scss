@@ -1,0 +1,20 @@
+.btnCategory{
+    background-color: #86ba09;
+    color:#fff;
+    transition: all 0.7s;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    margin-bottom: 4rem;
+    span{
+        font-size: 1.5rem;
+      
+    }
+
+    &:hover{
+        background-color: #fff;
+        border: 1px solid #86ba09;
+        color: #86ba09;
+    }
+}

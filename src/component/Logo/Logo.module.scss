@@ -1,0 +1,18 @@
+
+.logo__slider{
+    background-color: #f3f2ed;
+    padding:0 2rem;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    ul{
+       display: none !important;
+    }
+    button{
+        visibility: hidden;
+    }
+    .logo__img{
+        img{
+            max-width: 100%;
+        }
+    }
+}
