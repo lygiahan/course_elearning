@@ -142,6 +142,9 @@ export default function HeaderUI() {
                                        <p className={classes.nav__list__item__link} style={{cursor:'pointer'}}>Thể Loại<DownOutlined /></ p>
                                  </Dropdown>               
                                  </li>
+                                 <li className={classes.nav__list__item}>
+                                 <Link to="/category/All" className={classes.nav__list__item__link}>Khóa học</Link>
+                                 </li>
                                  <li className={classes.nav__list__item }>
                                     <div className={classes.nav__search}>
                                     <AutoComplete

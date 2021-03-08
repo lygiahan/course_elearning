@@ -16,6 +16,7 @@ import PrivateRoute from './PrivateRoute';
 import Page404 from './pages/404';
 import UserAdminPage from './pages/Admin/UserAdminPage';
 import CourseAdminPage from './pages/Admin/CourseAdminPage';
+import CategoryPage from './pages/CategoryPage';
 function App() {
   const dispatch = useDispatch();
  
@@ -42,6 +43,7 @@ function App() {
             <Route exact path="/detail/:id" component={DetailCourse}></Route>
             <Route exact path="/cart" component={CartPage}></Route>
             <Route exact path="/user" component={UserPage}></Route>
+            <Route exact path="/category/All" component={CategoryPage}></Route>
             <PrivateRoute path="/admin/user" component={UserAdminPage}/>
             <PrivateRoute  path='/admin' component={AdminPage}/>
             <PrivateRoute path='/admin/course' component={CourseAdminPage}/>

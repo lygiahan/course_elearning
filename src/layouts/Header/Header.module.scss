@@ -17,6 +17,11 @@
         display: none;
         svg{
             font-size: 3.5rem;
+            transition: all .5s;
+            &:hover{
+                color: #86ba09;
+                transform: rotate(90deg);
+            }
         }
     }
     .nav__right{       
@@ -60,7 +65,7 @@
             .nav__list__item__link{
                 color: #121212;
                 font-size: 1.4rem;
-                margin: 0 1rem;
+                margin: 0 .6rem;
                 font-weight: 600;
                 text-transform: uppercase;
                 transition: all 0.7s;
@@ -70,12 +75,10 @@
 
            
         }
-        .nav__list__item:nth-child(3){
-            width: 60%;
+        .nav__list__item:nth-child(4){
          
             .nav__search
-                    {
-             
+                    {  
                 display: flex;
                 align-items: center;
 

@@ -1,5 +1,5 @@
-import { getCourseSer,getCategorySer,filterCourseSer,detailCourseSer, searchCourse } from "../services/course"
-import { GET_CATEGORY_COURSE_FAIL,GET_CATEGORY_COURSE_BEGIN, GET_CATEGORY_COURSE_SUCCESS, GET_COURSE_BEGIN, GET_COURSE_FAIL, GET_COURSE_SUCCESS, FILTER_COURSE_SUCCESS, FILTER_COURSE_FAIL, DETAIL_COURSE_BEGIN, DETAIL_COURSE_SUCCESS, DETAIL_COURSE_FAIL } from "./type"
+import { getCourseSer,getCategorySer,filterCourseSer,detailCourseSer, searchCourse, getCoursePagiSer } from "../services/course"
+import { GET_CATEGORY_COURSE_FAIL,GET_CATEGORY_COURSE_BEGIN, GET_CATEGORY_COURSE_SUCCESS, GET_COURSE_BEGIN, GET_COURSE_FAIL, GET_COURSE_SUCCESS, FILTER_COURSE_SUCCESS, FILTER_COURSE_FAIL, DETAIL_COURSE_BEGIN, DETAIL_COURSE_SUCCESS, DETAIL_COURSE_FAIL, GET_COURSE_PAGINATE_BEGIN, GET_COURSE_PAGINATE_SUCCESS, GET_COURSE_PAGINATE_ERROR } from "./type"
 
   export const ReduxThunk =(type,data) =>{
       return {
@@ -18,6 +18,18 @@ export const getCourseAct=()=>{
         }
     }
 }
+  export const getCoursePagi=(page)=>{
+      return async dispatch=>{
+          try {
+              dispatch({type:GET_COURSE_PAGINATE_BEGIN})
+              let res = await getCoursePagiSer(page);
+              console.log(res);
+              dispatch(ReduxThunk(GET_COURSE_PAGINATE_SUCCESS,res.data.items))
+          } catch (error) {
+              dispatch(ReduxThunk(GET_COURSE_PAGINATE_ERROR,error))
+          }
+      }
+  }
 
 export const getCategoryCourseAct =()=>{
     return async dispatch =>{

@@ -74,12 +74,12 @@ export default function DetailCourse() {
                       <div className={classes.detail__content__row__left__item}>
                          <Typography.Title level={3} underline>Bạn sẽ học được gì</Typography.Title>
                            <Row gutter={[16,16]}>
-                               <Col md={12}><Typography.Text><CheckOutlined /> Có hiểu biết cơ bản về ngôn ngữ lập trình Python. </Typography.Text></Col>
-                               <Col md={12}><Typography.Text><CheckOutlined /> Có kỹ năng và hiểu biết về Python để tự tin ứng tuyển vào các công việc lập trình Python </Typography.Text></Col>
-                               <Col md={12}><Typography.Text><CheckOutlined /> Có được các kỹ năng Python tiên quyết để chuyển sang các ngành cụ thể - Học máy, Khoa học dữ liệu, v.v. </Typography.Text></Col>
-                               <Col md={12}><Typography.Text> <CheckOutlined />Thêm các kỹ năng Lập trình hướng đối tượng (OOP) Python vào lý lịch của bạn. </Typography.Text></Col>
-                               <Col md={12}><Typography.Text> <CheckOutlined />Hiểu cách tạo các chương trình Python của riêng bạn. </Typography.Text></Col>
-                               <Col md={12}><Typography.Text> <CheckOutlined />Học Python từ các nhà phát triển phần mềm chuyên nghiệp có kinh nghiệm. </Typography.Text></Col>
+                               <Col md={12}><Typography.Text><CheckOutlined /> Có hiểu biết cơ bản về ngôn ngữ lập trình {tenKhoaHoc}. </Typography.Text></Col>
+                               <Col md={12}><Typography.Text><CheckOutlined /> Có kỹ năng và hiểu biết về Python để tự tin ứng tuyển vào các công việc lập trình {tenKhoaHoc} </Typography.Text></Col>
+                               <Col md={12}><Typography.Text><CheckOutlined /> Có được các kỹ năng {tenKhoaHoc} tiên quyết để chuyển sang các ngành cụ thể - Học máy, Khoa học dữ liệu, v.v. </Typography.Text></Col>
+                               <Col md={12}><Typography.Text> <CheckOutlined />Thêm các kỹ năng Lập trình hướng đối tượng (OOP) {tenKhoaHoc} vào lý lịch của bạn. </Typography.Text></Col>
+                               <Col md={12}><Typography.Text> <CheckOutlined />Hiểu cách tạo các chương trình {tenKhoaHoc} của riêng bạn. </Typography.Text></Col>
+                               <Col md={12}><Typography.Text> <CheckOutlined />Học {tenKhoaHoc} từ các nhà phát triển phần mềm chuyên nghiệp có kinh nghiệm. </Typography.Text></Col>
 
                            </Row>
                       </div>

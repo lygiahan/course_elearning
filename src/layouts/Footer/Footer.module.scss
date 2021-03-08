@@ -1,9 +1,10 @@
 .footer{
-      background-color: #fff;
+      background-color: black;
       
       .footer__title{
           font-size: 2rem;
           font-family: Roboto Slab,serif;
+          color: white;
       }
      .footer__social__list{
          list-style-type: none;
@@ -16,7 +17,7 @@
                padding: 1rem;
                   svg{
                     font-size: 3rem;
-                    color: #86ba09;
+                    color: white;
                     &:hover{
                         color: seagreen;
                     }
@@ -33,7 +34,7 @@
         padding:0.6rem 0;
 
           .footer__category__list__item__link{
-                color: #666666;
+                color: white;
                 font-family: Roboto,serif;
                 font-size: 1.8rem;
                 &:hover{

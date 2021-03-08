@@ -9,11 +9,11 @@ export default function Footer() {
                         <Row gutter={[30,30]} >
                             <Col xs={24} sm={24} md={6}>
                                  <h2 className={classes.footer__title}>THÔNG TIN</h2>
-                                 <Typography.Text style={{fontSize:'1.7rem'}}>HLY la doanh nghiep vua thanh lap mang den cho nhung hoc vien tro thanh ky su gioi nhat den cho toan the gioi</Typography.Text>
+                                 <Typography.Text style={{fontSize:'1.7rem',color:'white'}}>HLY la doanh nghiep vua thanh lap mang den cho nhung hoc vien tro thanh ky su gioi nhat den cho toan the gioi</Typography.Text>
                                       <ul className={classes.footer__social__list}>
                                            <li>
                                              <a href="#">
-                                                   <TwitterCircleFilled />
+                                                   <TwitterCircleFilled style={{color:'white'}}/>
                                              </a>
                                            </li>
                                            <li>
@@ -66,7 +66,7 @@ export default function Footer() {
                              <br></br>
                         </Row>
                         <div className={classes.footer__bottom}>
-                             <Typography.Text style={{fontSize:'1.6rem'}}>© {new Date().getFullYear()} Bản quyền thuộc về thiết kế của HLY</Typography.Text>
+                             <Typography.Text style={{fontSize:'1.6rem',color:'white'}}>© {new Date().getFullYear()} Bản quyền thuộc về thiết kế của HLY</Typography.Text>
                         </div>
                   </Layout.Footer>
        </>
