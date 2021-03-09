@@ -28,7 +28,9 @@ let initialCourse = {
   detail: {},
   paginateCourse: [],
   loadingpaginate: false,
-  loadingCheckAuthor:false
+  loadingCheckAuthor:false,
+  recentCourse:null
+
 };
 
 export const CourseReducer = (state = initialCourse, action) => {
@@ -58,7 +60,8 @@ export const CourseReducer = (state = initialCourse, action) => {
       return { ...state, loadingDetail: true };
 
     case DETAIL_COURSE_SUCCESS:
-      return { ...state, loadingDetail: false, detail: action.data };
+              
+      return { ...state, loadingDetail: false, detail: action.data ,recentCourse:action.data};
 
     case GET_COURSE_PAGINATE_BEGIN:
       return { ...state, loadingpaginate: true };
@@ -96,9 +99,7 @@ export const CourseReducer = (state = initialCourse, action) => {
 
       case CHECK_TYPE_COURSE_SUCCESS:
 
-          
-      console.log('a',action.data)
-        return {...state,loadingFilter:false,paginateCourse:action.data}
+                  return {...state,loadingFilter:false,paginateCourse:action.data}
       case CHECK_TYPE_COURSE_FAIL:
         return {...state,loadingFilter:true}
     default:

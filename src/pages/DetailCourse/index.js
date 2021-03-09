@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { detailCourse } from '../../action/course';
 import {Row,Col, Typography, Button} from 'antd';
 import classes from './DetailCourse.module.scss';
-import { CheckOutlined, EyeOutlined, StarFilled, TeamOutlined } from '@ant-design/icons';
+import { CheckOutlined, ConsoleSqlOutlined, EyeOutlined, StarFilled, TeamOutlined } from '@ant-design/icons';
 import Footer from '../../layouts/Footer';
 import { addCart } from '../../action/cart';
 import Loading from '../../component/Loading';
@@ -16,13 +16,14 @@ export default function DetailCourse() {
        let {loadingDetail,detail} = state;
          let {tenKhoaHoc,moTa,luotXem,ngayTao,soLuongHocVien} = detail;
       const stateCart = useSelector(state=>state.CartReducer);
-
       const [loadingCart,SetLoadingCart]=useState(false);
-   
+      console.log(state.recentCourse)
        useEffect(()=>{
              dispatch(detailCourse(id));
        },[id])
-
+       useEffect(()=>{
+          localStorage.setItem('recentCourse',JSON.stringify([state.detail]))
+       },[id,state.detail])
        if(loadingDetail){
            return <Loading />
        }

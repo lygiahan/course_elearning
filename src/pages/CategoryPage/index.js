@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Category.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { Layout, Row, Typography,Card, Button } from "antd";
+import { Layout, Row, Typography, Card, Button } from "antd";
 import { EyeOutlined, StarFilled, TeamOutlined } from "@ant-design/icons";
 
 import {
@@ -58,7 +58,6 @@ export default function CategoryPage() {
     dispatch(getCategoryCourseAct());
   }, []);
 
-
   const addToCard = (data) => {
     dispatch(addCart(data));
   };
@@ -66,8 +65,8 @@ export default function CategoryPage() {
   if (stateCourse.loadingpaginate) {
     return <Loading />;
   }
-  let recent = localStorage.getItem('recentCourse')?JSON.parse(localStorage.getItem('recentCourse')):[];
-  
+  console.log(stateCourse.recentCourse);
+  let local = JSON.parse(localStorage.getItem('recentCourse'));
   return (
     <>
       <div style={{ backgroundColor: "#F4F4F4", padding: "5rem" }}>
@@ -98,7 +97,7 @@ export default function CategoryPage() {
                   })}
                 </Row>
               </Checkbox.Group>
-              <hr style={{margin:'1.5rem 0',border:'1px solid #eee'}}></hr>
+              <hr style={{ margin: "1.5rem 0", border: "1px solid #eee" }}></hr>
               <div>
                 <Typography.Title
                   level={3}
@@ -131,28 +130,36 @@ export default function CategoryPage() {
                     </Checkbox>
                   </Col>
                   <Col md={24}>
-                    <Checkbox key={3}onChange={onChangeType} value={"DiDong"}>
+                    <Checkbox key={3} onChange={onChangeType} value={"DiDong"}>
                       <span style={{ fontSize: 18 }}>
                         {"Lập trình di động"}
                       </span>
                     </Checkbox>
                   </Col>
                   <Col md={24}>
-                    <Checkbox key={4}onChange={onChangeType} value={"FrontEnd"}>
+                    <Checkbox
+                      key={4}
+                      onChange={onChangeType}
+                      value={"FrontEnd"}
+                    >
                       <span style={{ fontSize: 18 }}>
                         {"Lập trình Frontend"}
                       </span>
                     </Checkbox>
                   </Col>
                   <Col md={24}>
-                    <Checkbox key={5}onChange={onChangeType} value={"FullStack"}>
+                    <Checkbox
+                      key={5}
+                      onChange={onChangeType}
+                      value={"FullStack"}
+                    >
                       <span style={{ fontSize: 18 }}>
                         {"Lập trình FullStack"}
                       </span>
                     </Checkbox>
                   </Col>
                   <Col md={24}>
-                    <Checkbox key={6}onChange={onChangeType} value={"TuDuy"}>
+                    <Checkbox key={6} onChange={onChangeType} value={"TuDuy"}>
                       <span style={{ fontSize: 18 }}>{"Lập trình Tư Duy"}</span>
                     </Checkbox>
                   </Col>
@@ -163,7 +170,13 @@ export default function CategoryPage() {
 
           <Content style={{ backgroundColor: "#eeeeee" }}>
             <section className={classes.categoryPage}>
-              <Typography.Title style={{marginBottom:30}} underline level={2}>TẤT CẢ SẢN PHẨM</Typography.Title>
+              <Typography.Title
+                style={{ marginBottom: 30 }}
+                underline
+                level={2}
+              >
+                TẤT CẢ SẢN PHẨM
+              </Typography.Title>
               <Row gutter={[16, 16]}>
                 {stateCourse.paginateCourse.map((course, index) => {
                   return (
@@ -176,100 +189,111 @@ export default function CategoryPage() {
               {/* <Pagination onChange={onChangePage} curentPage={curentPage}/> */}
               <Paginati onChange={onChangePage} curentPage={curentPage} />
             </section>
-           
           </Content>
-          
         </Layout>
         <section className={classes.course_seen}>
-             <Typography.Title level={2}>Khóa học đã xem</Typography.Title>
-             <hr style={{margin:'1rem 0',border:'1px solid #eee'}}></hr>
-             <Row>
-              {recent ? (
-                <Col md={6}>
-                 <Link to={`detail/${recent.maKhoaHoc}`}>
-      <Card
-        className={classes.course}
-        bordered={false}
-        hoverable
-        cover={
-          <img
-            style={{
-              height: 180,
-              borderTopLeftRadius: 15,
-              borderTopRightRadius: 15,
-              objectFit: "cover",
-            }}
-            src={recent.hinhAnh}
-          />
-        }
-      >
-        <Card.Meta
-          className={classes.course__detail}
-          title={<h2 className={classes.course__title}>{recent.tenKhoaHoc}</h2>}
-          description={
-            <div className={classes.course__detail__body}>
-              <p>{recent.moTa.slice(0, 50) + "..."}</p>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: 0,
-                }}
-              >
-                <p>
-                  <EyeOutlined /> {recent.luotXem}
-                </p>
-                <p>
-                  <TeamOutlined /> ({recent.soLuongHocVien})
-                </p>
-              </div>
-              <div className={classes.course__detail__body__detail}>
-                <ul className={classes.icon__list}>
-                  <li>
-                    <StarFilled />
-                  </li>
-                  <li>
-                    <StarFilled />
-                  </li>
-                  <li>
-                    <StarFilled />
-                  </li>
-                  <li>
-                    <StarFilled />
-                  </li>
-                  <li>
-                    <StarFilled />
-                  </li>
-                </ul>
-                <div style={{ padding: "0" }} className={classes.detail__mobi}>
-                  <span>
-                    <Typography.Text delete>2.000.000đ</Typography.Text>
-                  </span>
-                  <span style={{ marginLeft: 8 }}>
-                    <Typography.Text mark strong>
-                      Miễn phí
-                    </Typography.Text>
-                  </span>
-                </div>
-              </div>
-              <div className={classes.course__detail__btn}>
-                <Link to="/category/All">
-                  <Button
-                    onClick={() => addToCard(recent)}
-                    className={classes.course__detail__btnadd}
-                  >
-                    Thêm
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          }
-        ></Card.Meta>
-      </Card>
-    </Link>
+          <Typography.Title level={2}>Khóa học đã xem</Typography.Title>
+          <hr style={{ margin: "1rem 0", border: "1px solid #eee" }}></hr>
+          <Row gutter={[16,16]}>
+            {local ? local.map((recent, index) => {
+              return (
+                <Col md={6} key={index}>
+                  <Link to={`detail/${recent.maKhoaHoc}`}>
+                    <Card
+                      className={classes.course}
+                      bordered={false}
+                      hoverable
+                      cover={
+                        <img
+                          style={{
+                            height: 180,
+                            borderTopLeftRadius: 15,
+                            borderTopRightRadius: 15,
+                            objectFit: "cover",
+                          }}
+                          src={recent.hinhAnh}
+                        />
+                      }
+                    >
+                      <Card.Meta
+                        className={classes.course__detail}
+                        title={
+                          <h2 className={classes.course__title}>
+                            {recent.tenKhoaHoc}
+                          </h2>
+                        }
+                        description={
+                          <div className={classes.course__detail__body}>
+                            <p>{recent.moTa.slice(0, 50) + "..."}</p>
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                padding: 0,
+                              }}
+                            >
+                              <p>
+                                <EyeOutlined /> {recent.luotXem}
+                              </p>
+                              <p>
+                                <TeamOutlined /> ({recent.soLuongHocVien})
+                              </p>
+                            </div>
+                            <div
+                              className={classes.course__detail__body__detail}
+                            >
+                              <ul className={classes.icon__list}>
+                                <li>
+                                  <StarFilled />
+                                </li>
+                                <li>
+                                  <StarFilled />
+                                </li>
+                                <li>
+                                  <StarFilled />
+                                </li>
+                                <li>
+                                  <StarFilled />
+                                </li>
+                                <li>
+                                  <StarFilled />
+                                </li>
+                              </ul>
+                              <div
+                                style={{ padding: "0" }}
+                                className={classes.detail__mobi}
+                              >
+                                <span>
+                                  <Typography.Text delete>
+                                    2.000.000đ
+                                  </Typography.Text>
+                                </span>
+                                <span style={{ marginLeft: 8 }}>
+                                  <Typography.Text mark strong>
+                                    Miễn phí
+                                  </Typography.Text>
+                                </span>
+                              </div>
+                            </div>
+                            <div className={classes.course__detail__btn}>
+                              <Link to="/category/All">
+                                <Button
+                                  onClick={() => addToCard(recent)}
+                                  className={classes.course__detail__btnadd}
+                                >
+                                  Thêm
+                                </Button>
+                              </Link>
+                            </div>
+                          </div>
+                        }
+                      ></Card.Meta>
+                    </Card>
+                  </Link>
                 </Col>
-              ):''}
-              </Row>
+              );
+            }):[]}
+          </Row>
         </section>
       </div>
       <Footer />

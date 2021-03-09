@@ -65,8 +65,7 @@ export const detailCourse =(ma)=>{
        try {
         dispatch({type:DETAIL_COURSE_BEGIN});
         let res = await detailCourseSer(ma);
-        console.log(res);
-        localStorage.setItem('recentCourse',JSON.stringify(res.data))
+
         dispatch(ReduxThunk(DETAIL_COURSE_SUCCESS,res.data));
        } catch (error) {
            dispatch(ReduxThunk(DETAIL_COURSE_FAIL,error));
