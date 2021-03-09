@@ -1,4 +1,9 @@
 import {
+  CHECK_AUTHOR_BEGIN,
+  CHECK_AUTHOR_SUCCESS,
+  CHECK_TYPE_COURSE_BEGIN,
+  CHECK_TYPE_COURSE_FAIL,
+  CHECK_TYPE_COURSE_SUCCESS,
   DETAIL_COURSE_BEGIN,
   DETAIL_COURSE_SUCCESS,
   FILTER_COURSE_SUCCESS,
@@ -23,6 +28,7 @@ let initialCourse = {
   detail: {},
   paginateCourse: [],
   loadingpaginate: false,
+  loadingCheckAuthor:false
 };
 
 export const CourseReducer = (state = initialCourse, action) => {
@@ -58,11 +64,43 @@ export const CourseReducer = (state = initialCourse, action) => {
       return { ...state, loadingpaginate: true };
 
     case GET_COURSE_PAGINATE_SUCCESS:
-        console.log(action.data);
       return { ...state, loadingpaginate: false, paginateCourse: action.data};
       
     case GET_COURSE_PAGINATE_ERROR:
       return { ...state, loading: false, paginateCourse: action.data };
+
+    case CHECK_AUTHOR_BEGIN:
+      return {...state,loadingCheckAuthor:true}
+
+    case CHECK_AUTHOR_SUCCESS:
+     let newstate = state.paginateCourse.filter(item=>{
+            let mangmoi =[];
+            for(let i =0;i<action.data.length ;i++){
+                   if(action.data[i]==='ALL'){
+                     
+                          return {...state,paginateCourse:newstate}
+                   }
+                   if(action.data[i] === item.nguoiTao.hoTen){
+                   
+                    return [...mangmoi,item];
+                   }
+                   
+            }
+      })
+      return {...state,loadingCheckAuthor:false,paginateCourse:newstate}
+
+
+      case CHECK_TYPE_COURSE_BEGIN:
+
+      return {...state,loadingFilter:true}
+
+      case CHECK_TYPE_COURSE_SUCCESS:
+
+          
+      console.log('a',action.data)
+        return {...state,loadingFilter:false,paginateCourse:action.data}
+      case CHECK_TYPE_COURSE_FAIL:
+        return {...state,loadingFilter:true}
     default:
       return state;
   }

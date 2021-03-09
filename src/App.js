@@ -40,7 +40,7 @@ function App() {
             <Route exact path="/" component={HomePage}></Route>
             <Route exact path="/register" component={RegisterPage}></Route>
             <Route exact path="/login" component={LoginPage}></Route>
-            <Route exact path="/detail/:id" component={DetailCourse}></Route>
+            <Route exact path="/category/detail/:id" component={DetailCourse}></Route>
             <Route exact path="/cart" component={CartPage}></Route>
             <Route exact path="/user" component={UserPage}></Route>
             <Route exact path="/category/All" component={CategoryPage}></Route>

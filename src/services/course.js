@@ -25,3 +25,6 @@ export const searchCourse=(makhoahoc)=>{
 export const getCoursePagiSer = (page)=>{
     return instance.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc_PhanTrang?page=${page}&pageSize=10&MaNhom=GP01`)
 }
+export const getCheckedTypeCourseSer =(data)=>{
+    return instance.get(`/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${data}&MaNhom=GP01`)
+}
