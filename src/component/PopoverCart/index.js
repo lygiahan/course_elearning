@@ -27,7 +27,8 @@ export default function PopoverCart(props) {
            })
    }
   return (
-    <div style={{ width: "300px" }}>
+    <div style={{ width: "300px", }}>
+      <div style={{overflow:'auto',height:200}}>
       <Typography.Title level={5}>
         {props.stateCart.length} Khóa học:
       </Typography.Title>
@@ -61,6 +62,7 @@ export default function PopoverCart(props) {
           </List.Item>
         )}
       />
+      </div>
       <hr></hr>
       <h2>Tổng tiền tạm tính: 0.00đ</h2>
       <Button type="primary"

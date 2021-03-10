@@ -28,3 +28,7 @@ export const getCoursePagiSer = (page)=>{
 export const getCheckedTypeCourseSer =(data)=>{
     return instance.get(`/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${data}&MaNhom=GP01`)
 }
+
+export const getCategoryPage =(category)=>{
+   return instance.get(`/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${category}&MaNhom=GP01`)
+}

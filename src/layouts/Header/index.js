@@ -21,7 +21,6 @@ export default function HeaderUI() {
        let {crentialadmin} = stateAdmin;
        const [option, setOption] = useState([]);
 
-
        
       const  showDrawer = () => {
          setVisible(!visible)
@@ -69,9 +68,9 @@ export default function HeaderUI() {
 
      const menuCategory =(
         <Menu >
-            {courses.map((item,index)=>{
-              return <Menu.Item key={index}><Link to={`/detail/${item.maKhoaHoc}`}>{item.tenKhoaHoc}</Link></Menu.Item> 
-            })}
+            {stateCourse.filtercourse?stateCourse.filtercourse.map((item,index)=>{
+              return <Menu.Item key={index}><Link to={`/category/${item.maDanhMuc}`}>{item.tenDanhMuc}</Link></Menu.Item> 
+            }):[]}
         </Menu>
      )
 
@@ -143,7 +142,7 @@ export default function HeaderUI() {
                                  </Dropdown>               
                                  </li>
                                  <li className={classes.nav__list__item}>
-                                 <Link to="/category/All" className={classes.nav__list__item__link}>Khóa học</Link>
+                                 <Link to="/course/All" className={classes.nav__list__item__link}>Khóa học</Link>
                                  </li>
                                  <li className={classes.nav__list__item }>
                                     <div className={classes.nav__search}>

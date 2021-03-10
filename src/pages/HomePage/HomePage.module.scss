@@ -95,14 +95,17 @@
     .hero__bottom{
         margin-top: 30px;
         .hero__bottom__list{
-            background-color: rgb(242, 234, 223);
+            background-color: #b4d36c;
             padding: 1.8rem 2rem;
             border-radius: 15px;
             -webkit-border-radius: 15px;
             -moz-border-radius: 15px;
             -ms-border-radius: 15px;
             -o-border-radius: 15px;      
-            
+            .hero__bottom__list__link{
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
             
       }
       .list2{

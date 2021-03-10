@@ -11,6 +11,9 @@ import {
   GET_CATEGORY_COURSE_FAIL,
   GET_CATEGORY_COURSE_SUCCESS,
   GET_COURSE_BEGIN,
+  GET_COURSE_CATEGORY_PAGE_BEGIN,
+  GET_COURSE_CATEGORY_PAGE_FAIL,
+  GET_COURSE_CATEGORY_PAGE_SUCCESS,
   GET_COURSE_FAIL,
   GET_COURSE_PAGINATE_BEGIN,
   GET_COURSE_PAGINATE_ERROR,
@@ -29,7 +32,9 @@ let initialCourse = {
   paginateCourse: [],
   loadingpaginate: false,
   loadingCheckAuthor:false,
-  recentCourse:null
+  recentCourse:null,
+  loadingCategory:false,
+  categoryPage:[]
 
 };
 
@@ -102,6 +107,16 @@ export const CourseReducer = (state = initialCourse, action) => {
                   return {...state,loadingFilter:false,paginateCourse:action.data}
       case CHECK_TYPE_COURSE_FAIL:
         return {...state,loadingFilter:true}
+
+
+     case GET_COURSE_CATEGORY_PAGE_BEGIN:
+       return {...state,loadingCategory:true}
+       
+     case GET_COURSE_CATEGORY_PAGE_SUCCESS:
+
+     return {...state,loadingCategory:false,categoryPage:action.data}
+     case GET_COURSE_CATEGORY_PAGE_FAIL:
+
     default:
       return state;
   }

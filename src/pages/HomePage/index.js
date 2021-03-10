@@ -26,6 +26,8 @@ export default function HomePage() {
   const dispatch = useDispatch();
   const stateCourse = useSelector((state) => state.CourseReducer);
   let { loading, filtercourse } = stateCourse;
+
+  
   useEffect(() => {
     dispatch(getCourseAct());
   }, []);
@@ -67,7 +69,7 @@ export default function HomePage() {
                       shape="round"
                       className={classes.carousel__item__one__btn}
                     >
-                      <Link to="#">Xem Thêm</Link>
+                      <Link to="/course/All">Xem Thêm</Link>
                     </Button>
                   </div>
                 </Col>
@@ -99,9 +101,12 @@ export default function HomePage() {
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy1.png" />}
                   title={
+                    <>
                     <a className={classes.hero__bottom__list__link} href="#">
                       Miễn phí khóa học
                     </a>
+                    <p>Xả hàng giá sốc</p>
+                    </>
                   }
                 />
               </List.Item>
@@ -111,7 +116,14 @@ export default function HomePage() {
               <List.Item className={classes.hero__bottom__list}>
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy2.png" />}
-                  title={<a href="#">Giảm Giá </a>}
+                  title={
+                    <>
+                    <a className={classes.hero__bottom__list__link} href="#">
+                      Mua Nhiều Giảm Sâu
+                    </a>
+                    <p>Xả hàng giá sốc</p>
+                    </>
+                  }
                 />
               </List.Item>
             </Col>
@@ -120,7 +132,14 @@ export default function HomePage() {
               <List.Item className={classes.hero__bottom__list}>
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy3.png" />}
-                  title={<a href="#">Truy cập trọn đời</a>}
+                  title={
+                    <>
+                    <a className={classes.hero__bottom__list__link} href="#">
+                      Sale Vô Vàn
+                    </a>
+                    <p>Sản Phẩm Dưới 299K</p>
+                    </>
+                  }
                 />
               </List.Item>
             </Col>
@@ -129,7 +148,14 @@ export default function HomePage() {
               <List.Item className={classes.hero__bottom__list}>
                 <List.Item.Meta
                   avatar={<Avatar size={50} src="./images/policy4.png" />}
-                  title={<a href="#">Hỗ trợ 24/24</a>}
+                  title={
+                    <>
+                    <a className={classes.hero__bottom__list__link} href="#">
+                      Mua Sắm Thoải Mái
+                    </a>
+                    <p>Xả hàng giá sốc</p>
+                    </>
+                  }
                 />
               </List.Item>
             </Col>

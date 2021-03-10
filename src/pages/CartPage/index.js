@@ -8,6 +8,7 @@ import { ToastCompo } from '../../component/ToastCompo';
 import { deleteCart } from '../../action/cart';
 import Footer from '../../layouts/Footer'
 import { ghiDanh } from '../../action/user';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 export default function CartPage() {
 
     const stateCart = useSelector(state => state.CartReducer);
@@ -81,10 +82,14 @@ export default function CartPage() {
       />
                      </Col>
                      <Col xs={24} sm={24} md={6} className={classes.cart__content__row__order2}>
-                        <Typography.Title type="success" level={1}>Tổng:</Typography.Title>
+                        <Typography.Title type="success" level={1}>Tổng tiền:</Typography.Title>
                          <Typography.Title level={2}>0 đ</Typography.Title>
-                         <Button shape="round" onClick={()=>userAddCart()} loading={loadingGhiDanh} className={classes.btnThanhToan}>THANH TOÁN</Button>
-                       
+                         <Button shape="round" onClick={()=>userAddCart()} loading={loadingGhiDanh} className={classes.btnThanhToan}>Tiến hành thanh toán</Button>
+                          <br></br>
+                          <div>
+                          <ArrowLeftOutlined />
+                          <Link style={{color:'#6c757d',marginLeft:5}} to="/course/All">Tiếp tục ghi danh khóa học</Link>
+                          </div>
                      </Col>
                   </Row>
               </div>

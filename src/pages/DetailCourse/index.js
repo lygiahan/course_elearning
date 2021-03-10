@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { detailCourse } from '../../action/course';
 import {Row,Col, Typography, Button} from 'antd';
 import classes from './DetailCourse.module.scss';
-import { CheckOutlined, ConsoleSqlOutlined, EyeOutlined, StarFilled, TeamOutlined } from '@ant-design/icons';
+import { CheckOutlined, EyeOutlined, StarFilled, TeamOutlined } from '@ant-design/icons';
 import Footer from '../../layouts/Footer';
 import { addCart } from '../../action/cart';
 import Loading from '../../component/Loading';
-import { ToastCompo } from '../../component/ToastCompo';
 export default function DetailCourse() {
        const {id} = useParams();
        const dispatch = useDispatch();
        const state = useSelector(state => state.CourseReducer);
        let {loadingDetail,detail} = state;
          let {tenKhoaHoc,moTa,luotXem,ngayTao,soLuongHocVien} = detail;
-      const stateCart = useSelector(state=>state.CartReducer);
-      const [loadingCart,SetLoadingCart]=useState(false);
-      console.log(state.recentCourse)
+
        useEffect(()=>{
              dispatch(detailCourse(id));
        },[id])
