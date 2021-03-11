@@ -15,7 +15,7 @@ export default function Course({course}) {
     }
     return (
         <Col xs={12} sm={8} md={6}>     
-         <Link to={`/category/detail/${maKhoaHoc}`}>
+         <Link to={`/course/detail/${maKhoaHoc}`}>
          <Card className={classes.course} 
          bordered={false} hoverable 
          cover={<img style={{height:180,borderTopLeftRadius:15,borderTopRightRadius:15,objectFit:'cover'}} src={hinhAnh}/>}>
