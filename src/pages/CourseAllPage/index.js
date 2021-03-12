@@ -14,26 +14,27 @@ import {
 import SidebarAuthor from "../../component/SidebarAuthor";
 import { Checkbox, Col } from "antd";
 import CategoryListAll from "../../component/CategoryListAll";
-import axios from "axios";
 import Footer from "../../layouts/Footer";
 import Paginati from "../../component/Paginati";
 import Loading from "../../component/Loading";
-import SidebarType from "../../component/SidebarType";
 import { addCart } from "../../action/cart";
 import { Link } from "react-router-dom";
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 export default function CourseAllPage() {
   const dispatch = useDispatch();
   const stateCourse = useSelector((state) => state.CourseReducer);
   const [curentPage, setCurentPage] = useState(1);
-
   let newSetSidebar = [
     ...new Set(stateCourse.courses.map((item) => item.nguoiTao.hoTen)),
   ];
-  function onChange(value) {
-    dispatch(checkAuthorAct(value));
+  function onChange(e) {
+    if(e.target.checked){
+      dispatch(checkAuthorAct(e.target.value));
+    }else{
+      return;
+    }
   }
 
   function onChangeType(value) {
@@ -68,9 +69,9 @@ export default function CourseAllPage() {
   let local = JSON.parse(localStorage.getItem('recentCourse'));
   return (
     <>
-      <div style={{ backgroundColor: "#F4F4F4", padding: "5rem" }}>
+      <div className={classes.layout_all}>
         <Layout className={classes.layout}>
-          <Sider className={classes.layout_sidebar} width={300}>
+          <Sider width={300} sm={24} className={classes.layout_sidebar}>
             <div className={classes.layout_sidebar_content}>
             <Typography.Title
                   level={3}
@@ -136,7 +137,6 @@ export default function CourseAllPage() {
               >
                 Tác giả
               </Typography.Title>
-              <Checkbox.Group style={{ width: "100%" }} onChange={onChange}>
                 <Row>
                   {newSetSidebar.map((course, index) => {
                     return (
@@ -148,12 +148,11 @@ export default function CourseAllPage() {
                             : classes.sidebarAuthor_false
                         }
                       >
-                        <SidebarAuthor course={course} index={index} />
+                        <SidebarAuthor onChange={onChange} course={course} index={index} />
                       </Col>
                     );
                   })}
                 </Row>
-              </Checkbox.Group>
              
             </div>
           </Sider>

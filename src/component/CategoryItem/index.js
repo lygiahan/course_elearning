@@ -23,7 +23,7 @@ export default function CategoryItem({course}) {
         dispatch(addCart(data));
       };
     return (
-        <Link to={`detail/${maKhoaHoc}`}>
+        <Link to={`/course/detail/${maKhoaHoc}`}>
       <Card
         className={classes.course}
         bordered={false}

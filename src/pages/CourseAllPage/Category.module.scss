@@ -1,8 +1,11 @@
+ .layout_all{
+
+    background-color: "#F4F4F4";
+     padding: 5rem;
  
     .layout{
         .layout_sidebar{
             background-color: #ffffff;
-            
            border-right: 1px solid #eee;
            padding: 2rem;
            .layout_sidebar_content {
@@ -158,8 +161,25 @@
                 }
             }
     
-            .course__detail__btnadd {}
         }
     
     }
 }
+
+ }
+  
+
+
+ @media screen and (max-width:769px){
+     .layout_all{
+         padding: 2rem !important;
+     }
+ }
+
+ @media screen and (max-width:500px){
+  .layout{
+      background-color: red !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+  }   
+ }

@@ -73,19 +73,6 @@ export default function HeaderUI() {
             }):[]}
         </Menu>
      )
-
-   //   const WidgetCategory =(list)=>{
-   //          let l = list.map((item,index)=>{
-   //             return <Menu>
-   //                   <Menu.SubMenu title={item.tenDanhMuc} onTitleClick={console.log('ahihi')}>
-   //                         <Menu.Item>sấ</Menu.Item>
-   //                   </Menu.SubMenu>
-   //             </Menu>
-   //          })
-   //          return l;
-   //   }
-
-   //   console.log(WidgetCategory(filtercourse));
      const logOut =()=>{
          dispatch(logoutAct(history));
      }
@@ -121,6 +108,7 @@ export default function HeaderUI() {
                            </Col>
  
                            <DrawerHeader 
+                           menuCategory={menuCategory}
                               onChange={onchange} 
                               userlogin={userlogin}
                               stateCart={stateCart} 

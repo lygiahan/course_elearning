@@ -3,8 +3,16 @@
 
     li{
         padding: 10px 0;
-
+        cursor: pointer;
+        transition: all .2s;
+     &:hover{
+         font-weight: bold;
+     }
+     &:hover a{
+         color: #86ba09;
+     }
         a{
+            transition: all .1s;
             color: #1e1e1e;
             font-size: 2rem;
         }

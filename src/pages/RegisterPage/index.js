@@ -7,9 +7,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { getUserAct } from "../../action/admin";
 import Footer from "../../layouts/Footer";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function RegisterPage() {
+
+  const history = useHistory();
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserAct());
@@ -39,7 +42,7 @@ export default function RegisterPage() {
         .required("Vui lòng nhập đầy đủ"),
     }),
     onSubmit: (value) => {
-      dispatch(registerAct(value));
+      dispatch(registerAct(value,history));
     },
   });
 

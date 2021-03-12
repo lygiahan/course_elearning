@@ -24,7 +24,7 @@ export default function CategoryPage() {
                <Row gutter={[32,32]}>
                    {category.categoryPage.map((item,index)=>{
                        return (
-                           <Col md={6}>
+                           <Col xs={12} sm={8} md={6}>
                              <CategoryItem course={item} index={index}/>
                            </Col>
                        )

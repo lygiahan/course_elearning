@@ -4,10 +4,11 @@ import { ReduxThunk } from "./course";
 import {  ADMIN_LOGIN__BEGIN, ADMIN_LOGIN__SUCCESS, INFO_USER_BEGIN, INFO_USER_FAIL, INFO_USER_SUCCESS, UPDATE_USER_BEGIN, UPDATE_USER_FAIL, UPDATE_USER_SUCCESS, USER_GHIDANH_BEGIN, USER_GHIDANH_FAIL, USER_GHIDANH_SUCCESS, USER_LOGIN_FAIL, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_REGISTER_FAIL, USER_REGISTER_SUCCESS } from "./type";
 import { ToastCompo } from "../component/ToastCompo";
 
-export const registerAct =(user)=>{
+export const registerAct =(user,history)=>{
     return async dispatch =>{
       try {
         await registerSer(user);
+        history.push('/login');
       } catch (error) {
           dispatch(ReduxThunk(USER_REGISTER_FAIL,error));
       }

@@ -1,5 +1,6 @@
 import {
   CHECK_AUTHOR_BEGIN,
+  CHECK_AUTHOR_FAIL,
   CHECK_AUTHOR_SUCCESS,
   CHECK_TYPE_COURSE_BEGIN,
   CHECK_TYPE_COURSE_FAIL,
@@ -28,11 +29,11 @@ let initialCourse = {
   filtercourse: [],
   filter: [],
   loadingDetail: false,
-  detail: {},
+  detail: null,
   paginateCourse: [],
   loadingpaginate: false,
   loadingCheckAuthor:false,
-  recentCourse:null,
+  recentCourse:[],
   loadingCategory:false,
   categoryPage:[]
 
@@ -65,7 +66,6 @@ export const CourseReducer = (state = initialCourse, action) => {
       return { ...state, loadingDetail: true };
 
     case DETAIL_COURSE_SUCCESS:
-              
       return { ...state, loadingDetail: false, detail: action.data ,recentCourse:action.data};
 
     case GET_COURSE_PAGINATE_BEGIN:
@@ -81,21 +81,10 @@ export const CourseReducer = (state = initialCourse, action) => {
       return {...state,loadingCheckAuthor:true}
 
     case CHECK_AUTHOR_SUCCESS:
-     let newstate = state.paginateCourse.filter(item=>{
-            let mangmoi =[];
-            for(let i =0;i<action.data.length ;i++){
-                   if(action.data[i]==='ALL'){
-                     
-                          return {...state,paginateCourse:newstate}
-                   }
-                   if(action.data[i] === item.nguoiTao.hoTen){
-                   
-                    return [...mangmoi,item];
-                   }
-                   
-            }
-      })
-      return {...state,loadingCheckAuthor:false,paginateCourse:newstate}
+            let newcourse = state.courses.filter(item=>item.nguoiTao.hoTen == action.data);
+      return {...state,loadingCheckAuthor:false,paginateCourse:newcourse}
+
+      case CHECK_AUTHOR_FAIL:
 
 
       case CHECK_TYPE_COURSE_BEGIN:
